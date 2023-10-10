@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-import dotenv from 'dotenv';
-dotenv.config();
+const PessoaController = require('./controllers/PessoaController')
+
 const app = express()
 app.use(bodyParser.json())
 
@@ -11,6 +11,8 @@ app.get('/test', (req,res) => {
   .status(200)
   .send({messagem: "test API"}) 
 })
+
+app.get('/user', PessoaController.pegaTodasAsPessoas)
 
 //port for iniciation of API
 const PORT = 8080
