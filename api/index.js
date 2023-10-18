@@ -1,22 +1,13 @@
 const express = require('express')
-const bodyParser = require('body-parser')
+const routes = require('./routes')
 const PessoaController = require('./controllers/PessoaController')
+const pessoaRoute = require('./routes/pessoasRoute')
+
 
 const app = express()
-app.use(bodyParser.json())
-
-//first rota
-app.get('/test', (req,res) => {
-  res
-  .status(200)
-  .send({messagem: "test API"}) 
-})
-
-app.get('/user', PessoaController.pegaTodasAsPessoas)
-
 //port for iniciation of API
 const PORT = 8080
-
+routes(app, pessoaRoute)
 
 //iniciation of API
 app.listen(PORT, () => {

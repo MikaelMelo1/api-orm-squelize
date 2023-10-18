@@ -7,7 +7,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER //constrainter
+        type: Sequelize.INTEGER //constrainter 
       },
       nome: {
         type: Sequelize.STRING
