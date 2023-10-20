@@ -43,7 +43,7 @@ class PessoaController {
       const deletePessoa = await database.Pessoas.destroy({
         where: { id: Number(id) },
       });
-      return res.status(200).json(deletePessoa);
+      return res.status(200).json(`O id${id} deletado com sucesso!`);
     } catch (error) {
       return res.status(500).json(error.message);
     }
