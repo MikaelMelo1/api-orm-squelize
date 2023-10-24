@@ -43,7 +43,7 @@ class PessoaController {
       const deletePessoa = await database.Pessoas.destroy({
         where: { id: Number(id) },
       });
-      return res.status(200).json(`O id${id} deletado com sucesso!`);
+      return res.status(200).json(deletePessoa);
     } catch (error) {
       return res.status(500).json(error.message);
     }
@@ -53,7 +53,7 @@ class PessoaController {
     try {
       const novaInfos = req.body;
       const { id } = req.params;
-
+//procura na database e atualiza
       await database.Pessoas.update(novaInfos, { where: { id: Number(id) } });
       const pessoaAtualiza = await database.Pessoas.findOne({
         where: { id: Number(id) },
