@@ -9,6 +9,9 @@ router.get('/pessoas/:id', PessoaController.pegaUmaPessoa)
 router.post('/pessoas', PessoaController.criaPessoa)
 router.delete('/pessoas/:id', PessoaController.deletePessoa)
 router.put('/pessoas/:id', PessoaController.AtualizaPessoa)
-
+router.get('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.pegaUmaMatricula)
+router.post('/pessoas/:estudanteId/matricula', PessoaController.criandoMatricula)
+router.put('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.atualizaMatricula)
+router.delete('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.apagaMatricula)
 
 module.exports = router
